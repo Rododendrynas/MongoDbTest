@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="blue">Memberships</a>
+        <a href="users.html">Users</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section>
+        <h1>Create Membership</h1>
+
+        <form id="createMembership">
+          <div class="input">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Name" />
+          </div>
+          <div class="input">
+            <label for="membershipPrice">Membership Price</label>
+            <input
+              type="number"
+              id="membershipPrice"
+              placeholder="Membership Price"
+            />
+          </div>
+          <div class="input">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" rows="10"></textarea>
+          </div>
+          <div class="buttons">
+            <button type="reset" class="cancel_button">Cancel</button>
+            <button type="submit" id="newMembership" class="add_button">
+              New Membership
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>Copyright &copy; 2021 Membership Manager.</footer>
+    <script>
+      document.forms[0].addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = e.target.elements.name.value.trim();
+        const price = Number(e.target.elements.membershipPrice.value);
+        const description = e.target.elements.description.value;
+
+        document.getElementById('createMembership').reset();
+
+        fetch('http://localhost:3004/memberships', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, price, description }),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+      });
+
+      document
+        .getElementByClass('cancel_button')
+        .addEventListener('click', (e) => {
+          document.getElementById('createMembership').reset();
+        });
+    </script>
+  </body>
+</html>

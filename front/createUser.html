@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="memberships.html">Memberships</a>
+        <a href="#">Users</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section>
+        <h1>Create User</h1>
+
+        <form id="createUser">
+          <div class="input">
+            <label for="name" aria-required="true">First Name</label>
+            <input type="text" id="name" placeholder="Name" />
+          </div>
+          <div class="input">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Last Name" />
+          </div>
+          <div class="input">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" placeholder="Email Address" />
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="cancel_button">Cancel</button>
+            <button type="submit" class="add_button">New User</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>Copyright &copy; 2021 Membership Manager.</footer>
+  </body>
+</html>

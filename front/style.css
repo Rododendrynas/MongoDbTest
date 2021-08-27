@@ -1,0 +1,121 @@
+body {
+  background: rgb(209, 220, 235);
+  color: rgb(77, 73, 73);
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 1rem;
+  background: white;
+}
+
+.blue {
+  color: rgb(31, 31, 206);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav a {
+  color: rgb(151, 145, 145);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:first-child {
+  margin-right: 5rem;
+}
+
+section#mainDescription {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+/* section#memberships {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+} */
+
+.add_button {
+  color: white;
+  background: rgb(130, 114, 219);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.cancel_button {
+  background: white;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+form {
+  background: white;
+  padding-top: 2rem;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+label {
+  display: inline-block;
+  clear: left;
+  width: calc((100% - 30rem) / 2);
+  text-align: right;
+  color: black;
+  font-weight: bolder;
+}
+
+form#createMembership input,
+textarea {
+  display: inline-block;
+
+  width: 30rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(180, 173, 173);
+}
+
+form .buttons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+label {
+  margin-right: 1.5rem;
+}
+
+footer {
+  margin-top: 20rem;
+  text-align: center;
+  padding: 0.5rem;
+}
